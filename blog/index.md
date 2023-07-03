@@ -8,7 +8,8 @@ I will share some technical posts. Usually I get myself stuck solving problems f
 
 * * *
 * * *
-  
+<br>
+
 ## [Connected to Fortigate IPSec using Strongswan](https://rz1207.github.io/blog/ipsec-fortigate-linux-7-2023)
 > #### 3 July 2023
 
