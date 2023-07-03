@@ -4,4 +4,4 @@ layout: default
 
 # `About Me`
 
-Will be written later
+I will tell you my crazy history later, but for now you can contact me on discord: rz1027

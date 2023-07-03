@@ -2,14 +2,14 @@
 layout: default
 ---
 
-# Welcome to My Personal Website!
+# Welcome to Rz1027's Website !! 
 
 Welcome to my website. I am `Rz1027` , 23 years old, specialized in AI for Cybersecurity and currently diving deep in both fields simultaneously. I will share any interesting aspect I find in addition to CTF writeups, projects, and more!!
 
 # Latest Posts
 
 * * *
-##### Last Update: June 4, 2023 (UTC+8)
+##### Last Update: June 3, 2023 (UTC+8)
 
 
 - Blog
