@@ -8,6 +8,19 @@ Welcome to my website. I am `Rz1027` , 23 years old, specialized in AI for Cyber
 
 # Latest Posts
 
+* * *
+##### Last Update: June 4, 2023 (UTC+8)
+
+
+- Blog
+	- [Connected to Fortigate IPSec using Strongswan](https://rz1207.github.io/blog/ipsec-fortigate-linux-7-2023), July 4, 2023
+
+* * *
+
+- CTF Writeups
+  - Coming Up
+	[//]: <> - HackTheBox
+	[//]: <> 	- [Brainfuck](https://siunam321.github.io/ctf/hackthebox/[//]: <> Brainfuck), June 4, 2023 
 <!---
 [//]: <> Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
 
