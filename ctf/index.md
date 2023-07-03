@@ -2,6 +2,6 @@
 layout: default
 ---
 
-# CTF Activity
+# `CTF Writeups`
 
-Here I will write about the CTFs I shared in some writeups in case I solved some unique challenges
+Here I will write about the CTFs I shared in some writeups in case I solved some unique challenges.
