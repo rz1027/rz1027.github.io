@@ -26,8 +26,10 @@ In my case I was connecting to a gateway using IPSEC IKEv1, where the types of a
 
 The local ID is an extra piece of data sent in negotiation, it is used by gateway for more verification especially when multiple users on the same ip.
 
-This is what `Windows` version of forticlient IPSEC configuration might look like:
+This is what **Windows** version of forticlient IPSEC configuration might look like:
 
 ![Windows Forticlient IPSEC](../assets/images/ipsec.png)
+
+
 
 
