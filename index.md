@@ -19,9 +19,6 @@ Welcome to my website. I am `Rz1027` , 23 years old, specialized in AI for Cyber
 
 - CTF Writeups
   - Coming Up
-[//]: <> - HackTheBox
-[//]: <> 	- [Brainfuck](https://siunam321.github.io/ctf/hackthebo
-[//]: <> Brainfuck), June 4, 2023 
 
 <!---
 [//]: <> Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
