@@ -52,7 +52,7 @@ Strongswan has 2 important files:
 
 # The Process
 
-A- First and before anything, open the corresponding ports in your firewall, I wasted a lot of time trying while it was blocking everything. Also it is important to restrict permission of ipsec.secrets
+A- First and before anything, open the corresponding ports in your firewall, I wasted a lot of time trying while it was blocking everything. Also it is important to restrict permission of ipsec.secrets, for example if you are using IPTables:
 
 ```shell
 #Allow ike default port 500
@@ -99,14 +99,15 @@ conn myIPSEC
 C- Add some connection specific parameters:
 
 ```shell
-	keyexchange=ikev1
-	ikelifetime=86400s
-	keylife=86400s
-	aggressive=yes
-	ike=aes128-sha1-modp1536,aes256-sha256-modp1536
-	esp=aes128-sha1-modp1536,aes256-sha1-modp1536
-	auto=add
+	keyexchange= ikev1 #Depends on what protocol you choose
+	ikelifetime= 86400s #Keylife in Phase 1
+	keylife= 86400s #Keylife in Phase 2
+	aggressive= yes #Very easy to miss
+	ike= aes128-sha1-modp1536,aes256-sha256-modp1536
+	esp= aes128-sha1-modp1536,aes256-sha1-modp1536
+	auto= add
 ```
+> `aes128-sha1-modp1536,aes256-sha256-modp1536` Here we define the cryptographic suite we are using. The `ike=` and `esp=` lines specify the algorithms that your VPN connection uses for the key negotiation phase (Phase 1, represented by ike=) and the actual data encryption phase (Phase 2, represented by esp=). Each proposal represents a different set of encryption, hash, and DH group to use, and by listing multiple proposals, you're telling the system that it can use any of these combinations. If you add ! after the proposals, it means that only the provided proposals should be used, rejecting other proposals.  For example in phase 1 if we choose AES128 + SHA1 + DH group 5, the proposal should be `aes128-sha1-modp1536`. DH group corresponds to specific number of bits (in case of DH5 it is 1536 in the MODP group, check [Link to another page](https://www.watchguard.com/help/docs/help-center/en-US/Content/en-US/Fireware/bovpn/manual/diffie_hellman_c.html)
 
 > `auto=add` , This means the connection will be loaded into memory but not started automatically. You have to manually start the connection using the command ipsec up <connection name>.
 
