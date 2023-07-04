@@ -151,7 +151,7 @@ In case you had some problems I recommend some methods to debug the process:
 1. Add this chunk to `/etc/ipsec.conf`
     ```shell
     config setup
-    charondebug="all"
+        charondebug="all"
     ```
 This increases the debug verbosity to the highest level so you could monitor what happens
 
