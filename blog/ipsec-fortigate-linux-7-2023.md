@@ -52,64 +52,64 @@ Strongswan has 2 important files:
 
 # The Process
 
-2. First and before anything, open the corresponding ports in your firewall, I wasted a lot of time trying while it was blocking everything. Also it is important to restrict permission of ipsec.secrets
+A- First and before anything, open the corresponding ports in your firewall, I wasted a lot of time trying while it was blocking everything. Also it is important to restrict permission of ipsec.secrets
 
-    ```shell
-    #Allow ike default port 500
-    sudo iptables -A INPUT -p udp --dport 500 -j ACCEPT 
-    #Allow NAT-transversal default port if you want it 
-    sudo iptables -A INPUT -p udp --dport 4500 -j ACCEPT
-    #Allow default esp port
-    sudo iptables -A INPUT -p esp -j ACCEPT
-    #Save the rules not to rerun everytime
-    sudo iptables-save > /etc/iptables/iptables.rules
-    #Set ipsec.secrets permissions
-    chmod 600 /etc/ipsec.secrets
-    ```
+```shell
+#Allow ike default port 500
+sudo iptables -A INPUT -p udp --dport 500 -j ACCEPT 
+#Allow NAT-transversal default port if you want it 
+sudo iptables -A INPUT -p udp --dport 4500 -j ACCEPT
+#Allow default esp port
+sudo iptables -A INPUT -p esp -j ACCEPT
+#Save the rules not to rerun everytime
+sudo iptables-save > /etc/iptables/iptables.rules
+#Set ipsec.secrets permissions
+chmod 600 /etc/ipsec.secrets
+```
 
-2. Define your communication peers:
-    - Left: is a terminology used to mean your local pc or network side
-    - Right: is the side of the network you are connecting to
+B- Define your communication peers:
+- Left: is a terminology used to mean your local pc or network side
+- Right: is the side of the network you are connecting to
 
-    ```shell
-    conn myIPSEC
-        left=%defaultroute #Use my systems default route
-        leftsourceip=%config
-        leftauth=psk
-        leftid=chocolate #Called Local ID in Windows FortiClient
-        rightauth=psk
-        leftauth2=xauth 
-        right= 123.123.123.123 #Gateway ip
-        rightsubnet= 0.0.0.0/0 #Wont be such if a static ip is set
+```shell
+conn myIPSEC
+    left=%defaultroute #Use my systems default route
+    leftsourceip=%config
+    leftauth=psk
+    leftid=chocolate #Called Local ID in Windows FortiClient
+    rightauth=psk
+    leftauth2=xauth 
+    right= 123.123.123.123 #Gateway ip
+    rightsubnet= 0.0.0.0/0 #Wont be such if a static ip is set
 
-        xauth=client
-        xauth_identity="username" #the Xauth user, password is in ipsec.secrets
-    ```
+    xauth=client
+    xauth_identity="username" #the Xauth user, password is in ipsec.secrets
+```
 
-    > `leftsourceip=%config` parameter is often used in IPsec VPN configurations. When specified, this setting means that the IP address for the local (left) end of the connection is to be obtained through configuration payloads during the IKE (Internet Key Exchange) phase.
+> `leftsourceip=%config` parameter is often used in IPsec VPN configurations. When specified, this setting means that the IP address for the local (left) end of the connection is to be obtained through configuration payloads during the IKE (Internet Key Exchange) phase.
 
-    > `leftauth=psk` and `rightauth=psk` defines that the first step of authentication is PSK which is using the preshared key
+> `leftauth=psk` and `rightauth=psk` defines that the first step of authentication is PSK which is using the preshared key
 
-    > `leftauth2=xauth` defines that the next step in authentication is xauth using a username and password pair. Don't defined a rightauth2 since xauth is only your side to be in.
+> `leftauth2=xauth` defines that the next step in authentication is xauth using a username and password pair. Don't defined a rightauth2 since xauth is only your side to be in.
 
-    > `xauth=client` option specifies that this endpoint (in your case, your local client) should expect to perform XAUTH (Extended Authentication) as a client.
+> `xauth=client` option specifies that this endpoint (in your case, your local client) should expect to perform XAUTH (Extended Authentication) as a client.
 
-    **Note that changing any single parameter of these will either get the connection to fail or establish a successful connection but devices aren't discoverable**
+**Note that changing any single parameter of these will either get the connection to fail or establish a successful connection but devices aren't discoverable**
 
-    2. Add some connection specific parameters:
+C- Add some connection specific parameters:
 
-    ```shell
-	    keyexchange=ikev1
-	    ikelifetime=86400s
-	    keylife=86400s
-	    aggressive=yes
-	    ike=aes128-sha1-modp1536,aes256-sha256-modp1536
-	    esp=aes128-sha1-modp1536,aes256-sha1-modp1536
-	    auto=add
-    ```
+```shell
+	keyexchange=ikev1
+	ikelifetime=86400s
+	keylife=86400s
+	aggressive=yes
+	ike=aes128-sha1-modp1536,aes256-sha256-modp1536
+	esp=aes128-sha1-modp1536,aes256-sha1-modp1536
+	auto=add
+```
 
 
-    > `auto=add` , This means the connection will be loaded into memory but not started automatically. You have to manually start the connection using the command ipsec up <connection name>.
+> `auto=add` , This means the connection will be loaded into memory but not started automatically. You have to manually start the connection using the command ipsec up <connection name>.
 
 
 
