@@ -24,12 +24,16 @@ In my case I was connecting to a gateway using IPSEC IKEv1, where the types of a
 * A username and password pair -> username:password
 * A local ID 
 
-The local ID is an extra piece of data sent in negotiation, it is used by gateway for more verification especially when multiple users on the same ip.
+The local ID is an extra piece of data sent in negotiation, it is used by gateway for more verification especially when multiple users on the same ip. (You might not have this in your configuration)
 
 This is what **Windows** version of forticlient IPSEC configuration might look like:
 
 ![Windows Forticlient IPSEC](https://rz1027.github.io/assets/images/ipsec.png)
 
+We need to translate such information into strongswan configuration.
+To install strongswan you can use:
+`pamac install strongswan` on arch based systems
+`sudo apt-get install strongswan` on ubunto based systems
 
 
 
