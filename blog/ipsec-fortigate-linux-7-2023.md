@@ -146,4 +146,10 @@ To set your connection up, you have to reset ipsec, reload the config, and then 
     ipsec up myIPSEC
 ```
 
+# Conclusion
 
+I successfully connected to my network's IPSEC VPN after suffering a lot. Please note that this case is specific to Fortigate IPSEC VPN, I explained the parameters so if you could customize it in case you had a different scenario, but understanding the main blocks will help you construct any configuration you need. 
+
+### Hope that helped !!! 
+
+***
