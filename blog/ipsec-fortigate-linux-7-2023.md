@@ -50,7 +50,7 @@ conn snt
         keylife=80000s
 ```
 
-2.`/etc/ipsec.secrets`
+1.`/etc/ipsec.secrets`
 
 # The Process
 
