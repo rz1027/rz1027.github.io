@@ -4,7 +4,8 @@ show_downloads: true
 google_analytics:
 theme: jekyll-theme-hacker
 timezone: asia/beirut
-url: rz1027.github.io
+baseurl: "" # the subpath of your site, e.g. /blog. If there is no subpath, this should be an empty string.
+url: "https://rz1027.github.io" # the base hostname & protocol for your site
 
 social:
   name: Rz1027
