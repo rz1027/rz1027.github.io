@@ -37,8 +37,8 @@ To install strongswan you can use:
 Strongswan has 2 important files:
 
 1. `/etc/ipsec.conf` 
- Which will have snippets of this form:  
-```shell
+  Which will have snippets of this form:
+  ```shell
     conn snt
         left=10.11.11.1
         leftid= chocolate
@@ -46,7 +46,7 @@ Strongswan has 2 important files:
         right=192.168.22.1
         rightsubnet=10.0.2.0/24 
         keylife=80000s  
-          ```
+  ```        
 
 1. `/etc/ipsec.secrets`
 
