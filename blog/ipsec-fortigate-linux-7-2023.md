@@ -145,6 +145,19 @@ To set your connection up, you have to reset ipsec, reload the config, and then 
     ipsec reload 
     ipsec up myIPSEC
 ```
+# Troubleshooting
+
+In case you had some problems I recommend some methods to debug the process:
+1. Add this chunk to `/etc/ipsec.conf`
+    ```shell
+    config setup
+    charondebug="all"
+    ```
+This increases the debug verbosity to the highest level so you could monitor what happens
+
+2. Extract the XML configuration from Forticlient on Windows to check if you missed any parameter
+
+3. Extract the *Debug* type logs from Forticlient on Windows to monitor how the negotiation is happening 
 
 # Conclusion
 
