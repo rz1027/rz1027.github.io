@@ -76,13 +76,13 @@ chmod 600 /etc/ipsec.secrets
 ```shell
 conn myIPSEC
     left=%defaultroute #Use my systems default route
-	leftsourceip=%config
-	leftauth=psk
+    leftsourceip=%config
+    leftauth=psk
     leftid=chocolate #Called Local ID in Windows FortiClient
-	rightauth=psk
-	leftauth2=xauth 
-	right= 123.123.123.123 #Gateway ip
-	rightsubnet= 0.0.0.0/0 #Wont be such if a static ip is set
+    rightauth=psk
+    leftauth2=xauth 
+    right= 123.123.123.123 #Gateway ip
+    rightsubnet= 0.0.0.0/0 #Wont be such if a static ip is set
 
     xauth=client
     xauth_identity="username" #the Xauth user, password is in ipsec.secrets
