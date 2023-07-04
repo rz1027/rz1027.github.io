@@ -53,7 +53,7 @@ Strongswan has 2 important files:
 # The Process
 
 ### A- First and before anything, open the corresponding ports in your firewall.
-> I wasted a lot of time trying while it was blocking everything. Also it is important to restrict permission of ipsec.secrets, for example if you are using IPTables:
+> I wasted a lot of time trying while it was blocking everything, for example if you are using IPTables:
 
 ```shell
 #Allow ike default port 500
