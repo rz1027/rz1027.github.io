@@ -28,7 +28,7 @@ The local ID is an extra piece of data sent in negotiation, it is used by gatewa
 
 This is what **Windows** version of forticlient IPSEC configuration might look like:
 
-![Windows Forticlient IPSEC](../assets/images/ipsec.png)
+![Windows Forticlient IPSEC](https://rz1027.github.io/assets/images/ipsec.png)
 
 
 
