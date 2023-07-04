@@ -86,13 +86,13 @@ conn myIPSEC
     xauth_identity="username" #the Xauth user, password is in ipsec.secrets
 ```
 
-> `leftsourceip=%config` parameter is often used in IPsec VPN configurations. When specified, this setting means that the IP address for the local (left) end of the connection is to be obtained through configuration payloads during the IKE (Internet Key Exchange) phase.
+* `leftsourceip=%config` parameter is often used in IPsec VPN configurations. When specified, this setting means that the IP address for the local (left) end of the connection is to be obtained through configuration payloads during the IKE (Internet Key Exchange) phase.
 
-> `leftauth=psk` and `rightauth=psk` defines that the first step of authentication is PSK which is using the preshared key
+* `leftauth=psk` and `rightauth=psk` defines that the first step of authentication is PSK which is using the preshared key
 
-> `leftauth2=xauth` defines that the next step in authentication is xauth using a username and password pair. Don't defined a rightauth2 since xauth is only your side to be in.
+* `leftauth2=xauth` defines that the next step in authentication is xauth using a username and password pair. Don't defined a rightauth2 since xauth is only your side to be in.
 
-> `xauth=client` option specifies that this endpoint (in your case, your local client) should expect to perform XAUTH (Extended Authentication) as a client.
+* `xauth=client` option specifies that this endpoint (in your case, your local client) should expect to perform XAUTH (Extended Authentication) as a client.
 
 **Note that changing any single parameter of these will either get the connection to fail or establish a successful connection but devices aren't discoverable**
 
@@ -107,9 +107,9 @@ C- Add some connection specific parameters:
 	esp= aes128-sha1-modp1536,aes256-sha1-modp1536
 	auto= add
 ```
-> `aes128-sha1-modp1536,aes256-sha256-modp1536` Here we define the cryptographic suite we are using. The `ike=` and `esp=` lines specify the algorithms that your VPN connection uses for the key negotiation phase (Phase 1, represented by ike=) and the actual data encryption phase (Phase 2, represented by esp=). Each proposal represents a different set of encryption, hash, and DH group to use, and by listing multiple proposals, you're telling the system that it can use any of these combinations. If you add ! after the proposals, it means that only the provided proposals should be used, rejecting other proposals.  For example in phase 1 if we choose AES128 + SHA1 + DH group 5, the proposal should be `aes128-sha1-modp1536`. DH group corresponds to specific number of bits (in case of DH5 it is 1536 in the MODP group, check [Link to another page](https://www.watchguard.com/help/docs/help-center/en-US/Content/en-US/Fireware/bovpn/manual/diffie_hellman_c.html)
+* `aes128-sha1-modp1536,aes256-sha256-modp1536` Here we define the cryptographic suite we are using. The `ike=` and `esp=` lines specify the algorithms that your VPN connection uses for the key negotiation phase (Phase 1, represented by ike=) and the actual data encryption phase (Phase 2, represented by esp=). Each proposal represents a different set of encryption, hash, and DH group to use, and by listing multiple proposals, you're telling the system that it can use any of these combinations. If you add ! after the proposals, it means that only the provided proposals should be used, rejecting other proposals.  For example in phase 1 if we choose AES128 + SHA1 + DH group 5, the proposal should be `aes128-sha1-modp1536`. DH group corresponds to specific number of bits (in case of DH5 it is 1536 in the MODP group, check [Link to another page](https://www.watchguard.com/help/docs/help-center/en-US/Content/en-US/Fireware/bovpn/manual/diffie_hellman_c.html)
 
-> `auto=add` , This means the connection will be loaded into memory but not started automatically. You have to manually start the connection using the command ipsec up <connection name>.
+* `auto=add` , This means the connection will be loaded into memory but not started automatically. You have to manually start the connection using the command ipsec up <connection name>.
 
 
 
