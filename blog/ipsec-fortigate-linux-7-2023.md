@@ -161,7 +161,7 @@ This increases the debug verbosity to the highest level so you could monitor wha
 
 # Conclusion
 
-I successfully connected to my network's IPSEC VPN after suffering a lot. Please note that this case is specific to Fortigate IPSEC VPN, I explained the parameters so if you could customize it in case you had a different scenario, but understanding the main blocks will help you construct any configuration you need. 
+I successfully connected to my network's IPSEC VPN after a long hassle. Please note that this case is specific to Fortigate IPSEC VPN, I explained the parameters so you could customize it in case you had a different scenario, but understanding the main blocks will help you construct any configuration you need. 
 
 ### Hope that helped !!! 
 
