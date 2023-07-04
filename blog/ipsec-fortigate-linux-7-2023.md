@@ -36,7 +36,7 @@ We need to translate such information into strongswan configuration.
 
 Strongswan has 2 important files:
 
-1. **`/etc/ipsec.conf`**
+1. **`/etc/ipsec.conf` Example**
 
     ```shell
     conn snt
