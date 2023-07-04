@@ -37,7 +37,7 @@ To install strongswan you can use:
 
 Strongswan has 2 important files:
 
-1.`/etc/ipsec.conf` 
+1. `/etc/ipsec.conf` 
 Which will have snippets of this form: 
 
 ```shell
@@ -50,11 +50,11 @@ conn snt
         keylife=80000s
 ```
 
-1.`/etc/ipsec.secrets`
+1. `/etc/ipsec.secrets`
 
 # The Process
 
-1. First and before anything, open the corresponding ports in your firewall, I wasted a lot of time trying while it was blocking everything. Also it is important to restrict permission of ipsec.secrets
+2. First and before anything, open the corresponding ports in your firewall, I wasted a lot of time trying while it was blocking everything. Also it is important to restrict permission of ipsec.secrets
 
 ```shell
 #Allow ike default port 500
@@ -98,7 +98,7 @@ conn myIPSEC
 
 **Note that changing any single parameter of these will either get the connection to fail or establish a successful connection but devices aren't discoverable**
 
-3. Add some connection specific parameters:
+2. Add some connection specific parameters:
 
 ```shell
 	keyexchange=ikev1
