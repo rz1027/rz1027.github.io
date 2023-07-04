@@ -108,7 +108,6 @@ C- Add some connection specific parameters:
 	auto=add
 ```
 
-
 > `auto=add` , This means the connection will be loaded into memory but not started automatically. You have to manually start the connection using the command ipsec up <connection name>.
 
 
