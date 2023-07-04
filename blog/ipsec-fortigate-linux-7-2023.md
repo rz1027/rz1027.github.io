@@ -31,8 +31,7 @@ This is what **Windows** version of forticlient IPSEC configuration might look l
 ![Windows Forticlient IPSEC](https://rz1027.github.io/assets/images/ipsec.png)
 
 We need to translate such information into strongswan configuration.
-To install strongswan you can use:
-> `pamac install strongswan` on Arch based systems or `sudo apt-get install strongswan` on Ubuntu based systems
+To install strongswan you can use:  `pamac install strongswan` on Arch based systems or `sudo apt-get install strongswan` on Ubuntu based systems
 
 Strongswan has 2 important files:
 
