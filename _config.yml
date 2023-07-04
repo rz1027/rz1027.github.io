@@ -6,7 +6,7 @@ theme: jekyll-theme-hacker
 timezone: asia/beirut
 baseurl: "" # the subpath of your site, e.g. /blog. If there is no subpath, this should be an empty string.
 url: "https://rz1027.github.io" # the base hostname & protocol for your site
-
+google_analytics: G-GLWWM9PC7N
 social:
   name: Rz1027
   discord: rz1027
