@@ -9,7 +9,7 @@ Welcome to my website. I am `Rz1027` , 23 years old, specialized in AI for Cyber
 # Latest Posts
 
 * * *
-##### Last Update: June 3, 2023 (UTC+8)
+##### Last Update: June 3, 2023 (UTC+3)
 
 
 - Blog
