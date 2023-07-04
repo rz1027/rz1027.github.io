@@ -36,6 +36,7 @@ To install strongswan you can use:
 `sudo apt-get install strongswan` on Ubuntu based systems
 
 Strongswan has 2 important files:
+
 *`/etc/ipsec.conf` 
 ```shell
 conn snt
