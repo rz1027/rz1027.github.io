@@ -46,7 +46,7 @@ Strongswan has 2 important files:
             right= 192.168.22.1
             rightsubnet= 10.0.2.0/24 
             keylife= 80000s```
-                   
+             
 1. `/etc/ipsec.secrets`
 
 # The Process
