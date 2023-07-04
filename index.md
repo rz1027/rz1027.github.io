@@ -13,7 +13,7 @@ Welcome to my website. I am `Rz1027` , 23 years old, specialized in AI for Cyber
 
 
 - Blog
-	- [Connected to Fortigate IPSec using Strongswan](https://rz1027.github.io/blog/ipsec-fortigate-linux-7-2023), July 3, 2023
+	- [Connecting to Fortigate IPSec using Strongswan](https://rz1027.github.io/blog/ipsec-fortigate-linux-7-2023), July 3, 2023
 
 * * *
 
