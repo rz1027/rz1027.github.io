@@ -112,5 +112,37 @@ conn myIPSEC
 
 * `auto=add` , This means the connection will be loaded into memory but not started automatically. You have to manually start the connection using the command ipsec up <connection name>.
 
+### D- Dead Pear Detection (Optional)
+
+```shell
+    dpdaction= clear
+    dpddelay= 10s
+    dpdtimeout= 30s
+```
+I have no idea how dead pear detection works but these are the corresponding parameters
+
+Any ways combine all these chunks into one configuration object and then set the secrets.
+
+### E- Set the secrets
+
+We set the secrets needed in `/etc/ipsec.secrets` , I use %any since I don't have any other ipsec tunnel to use, but if you do have others you should specify the ip peers.
+
+```shell
+# ipsec.secrets - strongSwan IPsec secrets file
+
+%any : PSK "ABCDEFG"
+username : XAUTH "password"
+```
+
+# Firing It Up
+
+To set your connection up, you have to reset ipsec, reload the config, and then up the tunnel.
+
+```shell
+    ipsec restart
+    ipsec update
+    ipsec reload 
+    ipsec up myIPSEC
+```
 
 
