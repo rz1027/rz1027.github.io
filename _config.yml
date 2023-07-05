@@ -1,7 +1,6 @@
 title: Rz1027 Website
 description: Cybersecurity and AI integrator | Penetration Tester | I share whatever I find interesting
 show_downloads: true
-google_analytics:
 theme: jekyll-theme-hacker
 timezone: asia/beirut
 baseurl: "" # the subpath of your site, e.g. /blog. If there is no subpath, this should be an empty string.
